@@ -1,0 +1,72 @@
+/*fonts Заголовок (H1) 36px PT Sans Bold
+Заголовок (H2-H3) 24px / 18px PT Sans Bold
+Основной текст 16px PT Sans
+Вспомогательные тексты 12px PT Sans Italic*/
+@font-face {
+    font-family: 'PTSansBold';
+    src: url(../media/fonts/PT_Sans/PTSans-Bold.ttf);
+}
+@font-face {
+    font-family: 'PTSans';
+    src: url(../media/fonts/PT_Sans/PTSans-Regular.ttf);
+}
+@font-face {
+    font-family: 'PTSansItalic';
+    src: url(../media/fonts/PT_Sans/PTSans-Italic.ttf);
+}
+/*colors*/
+:root{
+    --cblue:#007bff;
+    --dark-blue:#0d47a1;
+    --grey:#6c757d;
+    --background:#f8f9fa;
+    --accent: #ffffff;
+}
+*{
+    font-family: 'PTSans';
+    font-size: 16px;
+    color: var(--dark-blue);
+}
+header,footer{
+    color: var(--accent);
+    padding: 40px;
+    background-color: var(--cblue);
+}
+body{
+    background-color: var(--background);
+}
+h1{
+    font-family: 'PTSansBold';
+    font-size: 36px;
+}
+h2{
+    text-align: center;
+    margin: 20px;
+    font-family: 'PTSansBold';
+    font-size: 24px;
+}
+h3{
+    text-align: center;
+    font-family: 'PTSansBold';
+    font-size: 18px;
+    color: var(--accent);
+}
+.pdop{
+    text-align: center;
+font-family: 'PTSansItalic';
+    font-size: 12px;
+    color: var(--accent);
+}
+.centrp{
+    text-align: center;
+    color: var(--accent);
+}
+.btn{
+    margin: 10px;
+}
+.centrp2{
+    text-align: center;
+}
+.logo{
+    width: 100px;
+}
