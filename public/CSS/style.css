@@ -90,3 +90,21 @@ input,.form-select,.form-control{
     opacity: 0.6;
     color:var(--cblue)
 }
+.two{
+        display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+@media(max-width:400px){
+    *{
+        font-size: 8px;
+    }
+.table{
+    font-size: 6px;
+    
+}
+input,.form-select,.form-control{
+   width: 60px;
+    margin: 10px;
+}
+}

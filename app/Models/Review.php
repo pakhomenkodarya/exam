@@ -6,5 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
 {
-    //
+    protected $fillable = [
+       'user_id',
+       'appointment_id',
+       'review'
+    ];
+    public function appointment(){
+        return $this->belongsTo(Appointment::class,'appointment_id');
+    }
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

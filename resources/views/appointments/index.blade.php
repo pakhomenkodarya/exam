@@ -1,6 +1,12 @@
 @extends('layouts.app')
 @section('title','Заявки')
 @section('main')
+@if(session('error'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" id="Alert">
+            {{session('error')}}<br>
+        <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert" id="closeBtn"></button>
+    </div>
+@endif
 <h2>Заявки</h2>
 <div class="text-center mb-3">
     <a class="btn btn-light" href="{{route('appointments.create')}}">Создать заявку</a>
@@ -26,7 +32,17 @@
       <th>{{$a->status}}</th>
       <th>{{$a->reason??'-'}}</th>
       <th>
-        
+        @if($a->status==='Новая')
+        <a href="{{route('appointments.edit',$a->id)}}">Редактировать</a>
+        <form action="{{route('appointments.delete',$a->id)}}" method="post">
+          @method('DELETE')
+          @csrf
+          <button type="submit">Удалить</button>
+        </form>
+        @endif
+       @if($a->status === 'Обучение завершено' && (!$a->review || $a->review->count() == 0))
+    <a href="{{route('reviews.create',$a->id)}}">Оставить отзыв</a>
+@endif
       </th>
     </tr>
     @endforeach

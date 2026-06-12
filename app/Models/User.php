@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Appointment;
-
+use App\Models\Review;
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
@@ -30,6 +30,9 @@ class User extends Authenticatable
     ];
     public function appointments(){
         return $this->hasMany(Appointment::class);
+    }
+    public function review(){
+        return $this->hasMany(Review::class);
     }
     /**
      * The attributes that should be hidden for serialization.

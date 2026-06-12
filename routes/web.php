@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\WelcomeController;
 Route::get('/', [WelcomeController::class,'welcome'])->name('welcome');
 
@@ -19,6 +20,9 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/appointments/store', [AppointmentController::class,'store'])->name('appointments.store');
     Route::get('/appointments/{id}/edit', [AppointmentController::class,'edit'])->name('appointments.edit');
     Route::put('/appointments/update/{id}', [AppointmentController::class,'update'])->name('appointments.update');
+    Route::delete('/appointments/{id}', [AppointmentController::class,'delete'])->name('appointments.delete');
+    Route::get('/appointments/review/create/{id}', [ReviewController::class,'create'])->name('reviews.create');
+    Route::post('/appointments/review/store/{id}', [ReviewController::class,'store'])->name('reviews.store');
 });
 
 Route::middleware(['auth','admin'])->group(function(){
