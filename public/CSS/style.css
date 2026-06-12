@@ -77,8 +77,9 @@ form{
     flex-direction: column;
     align-items: center;
 }
-input{
-    min-width: 200px;
+input,.form-select,.form-control{
+   width: 300px;
+    margin: 10px;
 }
 .a{
     color:var(--dark-blue);

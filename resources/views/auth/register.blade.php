@@ -6,7 +6,7 @@
         @foreach($errors->all() as $error)
             {{$error}}<br>
         @endforeach
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert" id="closeBtn"></button>
     </div>
 @endif
 <h2>Регистрация</h2>

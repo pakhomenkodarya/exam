@@ -10,13 +10,15 @@
 <body>
     <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      
   <div class="container-fluid">
+     <img src="{{asset('media/images/logo.png')}}" class="logo" alt="logo">
+      <h1><a class="navbar-brand" href="{{route('welcome')}}">Курсы.РФ</a></h1>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <img src="{{asset('media/images/logo.png')}}" class="logo" alt="logo">
-      <h1><a class="navbar-brand" href="{{route('welcome')}}">Курсы.РФ</a></h1>
+       
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         @auth
         @if(Auth::user()->role==='admin')

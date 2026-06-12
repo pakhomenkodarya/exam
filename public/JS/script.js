@@ -6,8 +6,11 @@ function closeAlert() {
     alert.style.opacity = '0';
     setTimeout(() => alert.remove(), 500);
 }
-setTimeout(closeAlert, 4000);
-document.getElementById('closeBtn')?.addEventListener('click', function(e) {
-    e.stopPropagation();
-    closeAlert();
+
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(closeAlert, 4000);
+    document.getElementById('closeBtn')?.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeAlert();
+    });
 });

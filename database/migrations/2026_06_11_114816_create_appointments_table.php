@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('language');
             $table->date('date');
-            $table->enum('paymethod',['предоплата по QR-коду',' оплата картой МИР','постоплата в офисе организации']);
+            $table->enum('paymethod',['предоплата по QR-коду','оплата картой МИР','постоплата в офисе организации']);
             $table->enum('status',['Новая','Идет обучение','Обучение завершено','Отклонена'])->default('Новая');
             $table->string('reason')->nullable();
             $table->timestamps();
